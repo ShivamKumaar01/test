@@ -34,7 +34,7 @@ interface FormData {
 const Login: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
-//   const user = useSelector((state: RootState) => state.login.user);
+
 
   const {
     register,
@@ -48,8 +48,7 @@ const Login: React.FC = () => {
     dispatch(loginUser(data))
       .unwrap()
       .then((response) => {
-        // toast.success("Login successful!");
-        //  localStorage.setItem('token', response.token);
+      
         setTimeout(() => {
           router.push("/dashboard");
         }, 1000);
@@ -62,7 +61,7 @@ const Login: React.FC = () => {
 
   return (
     <>
-      {/* <Toaster position="top-right" /> */}
+    
 
       <Box display={"flex"} paddingTop={"6%"} width={"100vw"}>
         <Box

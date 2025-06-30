@@ -1,6 +1,11 @@
 import { DataSource } from 'typeorm';
 import * as dotenv from 'dotenv';
 import { User } from 'src/user/entities/user.entity';
+import { Owner } from 'src/owner/entities/owner.entity';
+import { Bus } from 'src/bus/entities/bus.entity';
+import { Ride } from 'src/ride/entities/ride.entity';
+import { Reservation } from 'src/reservation/entities/reservation.entity';
+
 dotenv.config();
 
 
@@ -15,7 +20,7 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME || 'final-project',
   synchronize: true,
   logging:true,
-  entities: [User],
+  entities: [User,Owner,Bus,Ride,Reservation],
   migrations: [isCompiled ? 'dist/database/migrations/*.js' : 'src/database/migrations/*.ts'],
 
 });

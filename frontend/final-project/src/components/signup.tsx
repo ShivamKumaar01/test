@@ -20,7 +20,6 @@ import { AppDispatch } from "@/redux/store";
 import { signUpUser } from "@/redux/signupSlice";
 // import { signUpUser } from "@/redux/signupSlice";
 
-
 const schema = yup.object().shape({
   name: yup.string().min(3, "Name must be at least 3 characters").required("Name is required"),
   email: yup.string().email("Invalid email format").required("Email is required"),
